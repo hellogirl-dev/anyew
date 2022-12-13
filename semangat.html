@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Hai</title>
+    <script>
+        alert('hai ayang')
+        alert('semangat nugas')
+    </script>
+    <script language="JavaScript">
+        function tb5_makeArray(n) {
+            this.length = n;
+            return this.length;
+        }
+
+        var tb5_counter = 2;
+        var tb5_currMsg = 0;
+        var tb5_stsmsg = "";
+
+        function tb5_shuffle(arr) {
+            var k;
+            for (i = 0; i < arr.length; i++) {
+                k = Math.round(Math.random() * (arr.length - i - 1)) + i;
+                temp = arr[i];
+                arr[i] = arr[k];
+                arr[k] = temp;
+            }
+            return arr;
+        }
+        tb5_arr = new tb5_makeArray(tb5_messages[tb5_currMsg].length);
+        tb5_sts = new tb5_makeArray(tb5_messages[tb5_currMsg].length);
+        for (var i = 0; i < tb5_messages[tb5_currMsg].length; i++) {
+            tb5_arr[i] = i;
+            tb5_sts[i] = "_";
+        }
+        tb5_arr = tb5_shuffle(tb5_arr);
+
+        function tb5_init(n) {
+            var k;
+            if (n == tb5_arr.length) {
+                if (tb5_currMsg == tb5_messages.length - 1) {
+                    if ((tb5_rptType == 'finite') && (tb5_counter == tb5_rptNbr)) {
+                        clearTimeout(tb5_timerID);
+                        return;
+                    }
+                    tb5_counter++;
+                    tb5_currMsg = 0;
+                } else {
+                    tb5_currMsg++;
+                }
+                n = 0;
+                tb5_arr = new tb5_makeArray(tb5_messages[tb5_currMsg].length);
+                tb5_sts = new tb5_makeArray(tb5_messages[tb5_currMsg].length);
+                for (var i = 0; i < tb5_messages[tb5_currMsg].length; i++) {
+                    tb5_arr[i] = i;
+                    tb5_sts[i] = "_";
+                }
+                tb5_arr = tb5_shuffle(tb5_arr);
+                tb5_sp = tb5_delay;
+            } else {
+                tb5_sp = tb5_speed;
+                k = tb5_arr[n];
+                tb5_sts[k] = tb5_messages[tb5_currMsg].charAt(k);
+                tb5_stsmsg = "";
+                for (var i = 0; i < tb5_sts.length; i++)
+                    tb5_stsmsg += tb5_sts[i];
+                document.title = tb5_stsmsg;
+                n++;
+            }
+            tb5_timerID = setTimeout("tb5_init(" + n + ")", tb5_sp);
+        }
+
+        function tb5_randomizetitle() {
+            tb5_init(0);
+        }
+        tb5_randomizetitle();
+    </script>
+    </br>
+    <center>
+</head>
+
+<body BGCOLOR="grey">
+    <center>
+        <center>
+            <br><br>
+            <font size="5">
+                <font color="white" face="courier new">jgn tegang gitu dong</font>
+                <br>
+                <font size="5">
+                    <font color="white" face="courier new">Semangat yaa</font>
+                    <br><a href="https://api.whatsapp.com/send?phone=628895576402&text=love%20u"><input type="button" value="iya" onclick="alert('chat aja kalo butuh apa apa');" style="font size="5"></a>
+                    <img src="anyew.jpeg" height="300">
+                    <a href="https://api.whatsapp.com/send?phone=628895576402&text=kamu%20pea%20%20"></a>
+                    <marquee>
+                        <font size="3">
+
+                            <style type="text/css">
+                                #outerCircleText {
+                                    font-style: courier new;
+                                    font-weight: bold;
+                                    font-family: 'comic sans ms', verdana, arial;
+                                    color: black;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: 3000;
+                                    cursor: default;
+                                }
+                                
+                                #outerCircleText div {
+                                    position: relative;
+                                }
+                                
+                                #outerCircleText div div {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    text-align: center;
+                                }
+                            </style>
+                            </script>
+
+</html>
